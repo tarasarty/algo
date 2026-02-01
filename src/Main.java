@@ -26,8 +26,9 @@ public class Main {
 }
 
 class Worker implements Runnable {
-    private String name;
-    private int count;
+    private static final long SLEEP_DURATION_MS = 500;
+    private final String name;
+    private final int count;
     
     public Worker(String name, int count) {
         this.name = name;
@@ -39,7 +40,7 @@ class Worker implements Runnable {
         for (int i = 1; i <= count; i++) {
             System.out.println(name + " - Count: " + i);
             try {
-                Thread.sleep(500); // Sleep for 500ms
+                Thread.sleep(SLEEP_DURATION_MS);
             } catch (InterruptedException e) {
                 System.err.println(name + " interrupted: " + e.getMessage());
                 Thread.currentThread().interrupt();
