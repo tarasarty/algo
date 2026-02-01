@@ -18,6 +18,7 @@ public class Main {
             thread3.join();
         } catch (InterruptedException e) {
             System.err.println("Main thread interrupted: " + e.getMessage());
+            Thread.currentThread().interrupt();
         }
         
         System.out.println("\nAll threads completed!");
@@ -41,6 +42,8 @@ class Worker implements Runnable {
                 Thread.sleep(500); // Sleep for 500ms
             } catch (InterruptedException e) {
                 System.err.println(name + " interrupted: " + e.getMessage());
+                Thread.currentThread().interrupt();
+                break;
             }
         }
         System.out.println(name + " finished!");
