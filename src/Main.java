@@ -9,6 +9,8 @@ public class Main {
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
         }
-        System.out.println("t -> 8 -> 3442");
+        System.out.println("t -> 8 -> 2977");
+        System.out.println("t -> 10 -> 3442");
+        System.out.println("t -> 12 -> 2565");
     }
 }
